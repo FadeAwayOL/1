@@ -391,6 +391,10 @@ canvas:not(#ribbon-canvas),
   -ms-animation: tocsidebarRtoL 0.7s;
   animation: tocsidebarRtoL 0.7s;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 @-moz-keyframes scroll-down-effect {
   0% {
     top: 0;
