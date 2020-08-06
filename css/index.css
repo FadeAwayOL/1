@@ -278,7 +278,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: ;
+  background: url("https://i.loli.net/2020/06/17/9xzPKUe1OVTHtYw.png");
   background-attachment: local;
   background-position: center;
   -webkit-background-size: cover;
@@ -2461,6 +2461,13 @@ blockquote footer cite:before {
   -moz-background-size: cover;
   background-size: cover;
 }
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  content: '';
+}
 #footer-wrap {
   position: relative;
   padding: 2rem 1rem;
@@ -2653,7 +2660,7 @@ blockquote footer cite:before {
   margin-right: 0.2rem;
 }
 #page-header.post-bg #post-info #post-meta .post-meta-label {
-  margin-right: 0.2rem;
+  display: none;
 }
 #page-header.post-bg #post-info #post-meta a {
   color: var(--light-grey);
@@ -3098,7 +3105,7 @@ _:future,
   margin: 0 0.2rem 0 0;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
-  padding-right: 0.2rem;
+  display: none;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta__separator {
   margin: 0 0.3rem;
