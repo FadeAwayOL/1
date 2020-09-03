@@ -4,13 +4,50 @@
   
     
     <entry>
-      <title>stach局部变量</title>
+      <title>hexo博客搭建</title>
+      <link href="/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <url>/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-创建github个人仓库"><a href="#1-创建github个人仓库" class="headerlink" title="1.创建github个人仓库"></a>1.创建github个人仓库</h2><p>github账户你值得拥有一个！</p><p><a href="https://link.zhihu.com/?target=https%3A//www.github.com/">Build software better, togetherwww.github.com<img src="https://pic3.zhimg.com/v2-1e6b64cf13587210e41b79fd2086c266_180x120.jpg" alt="图标"></a></p><p>创建一个自己的github账户，用户名想好(省的后期修改）。</p><p>在个人主页点击Repositories，然后new一个</p><p><img src="https://pic3.zhimg.com/80/v2-17f9a82e49eca763ab3f56221906482c_720w.jpg" alt="img"></p><p><strong>注意，仓库名格式：用户名.<a href="https://link.zhihu.com/?target=http%3A//github.io">http://github.io</a></strong></p><h2 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a><strong>2.安装git</strong></h2><p>你写的的hexo博客文章，需要通过git上传到GitHub的仓库，然后才能显示在你的博客网站上</p><p>git下载地址</p><p><a href="https://link.zhihu.com/?target=https%3A//git-scm.com/downloads">Git - Downloadsgit-scm.com</a></p><p>打开命令行，用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure><p>命令检查是否安装成功：成功会显示版本号</p><h2 id="3-安装nodejs"><a href="#3-安装nodejs" class="headerlink" title="3.安装nodejs"></a>3.安装nodejs</h2><p>下载地址</p><p><a href="https://link.zhihu.com/?target=https%3A//nodejs.org/en/download/">Download | Node.jsnodejs.org<img src="https://pic3.zhimg.com/v2-4db4298890c8e588b2cd12ec7ad34087_ipico.jpg" alt="图标"></a></p><p>选择LTS（推荐版本) 就行</p><p>同样，用命令检查一下是否安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><p>显示版本号就问题不大</p><h2 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="4.安装hexo"></a>4.安装hexo</h2><p>离目标更近一步啦！</p><p>首先在电脑上找一个合适的地方(就是你不会不小心删除，也不会找不到啥的），新建一个文件夹，因为我们是搭博客嘛，就取名叫blog好了（名字没强制性要求，遵循好记好用原则就OK啦）。然后右键这个文件夹，出来一栏，选择git bash here，会弹出命令行窗口，没错，git和cmd都可以用来执行命令，输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>安装，然后用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><p>检查一下版本，显示版本号就安装成功</p><p>不用关闭命令窗口</p><p>接下来还有一些搭建博客的准备工作</p><ol><li><strong><em>初始化\</em></strong></li></ol><p>输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>然后静静等待，hexo会自动下载一些文件到blog文件夹</p><p><img src="https://picb.zhimg.com/80/v2-879733b1dadcb016b3612c941cc3a2f4_720w.jpg" alt="img"></p><p>文件们长这样</p><p>然后</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>两者一样，是否简写的区别罢了。</p><p>hexo g：生成静态文件。</p><p>hexo s：启动服务器。默认情况下，访问网址为</p><p><a href="https://link.zhihu.com/?target=http%3A//localhost%3A4000/">http://localhost:4000/localhost:4000</a></p><p>你可以就在本地看到自己的博客了。</p><p>按crtl C可以关掉这个本地预览服务</p><p>命令行窗口让TA挂在那儿好了，用不着关</p><p>2.<strong><em>上传文件到github仓库\</em></strong></p><p>之前说了，要把你本地的文件上传到github仓库，github才能帮你生成大家都可以访问的博客网站。</p><p>所以，先来配置SSH KEY吧！</p><p>在命令行窗口中敲入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的github的邮箱&quot;</span><br></pre></td></tr></table></figure><p>看清楚，有你要填的东西，不要简单的复制粘贴啊，对号入座！</p><p>创建ssh key</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的github的邮箱&quot;</span><br></pre></td></tr></table></figure><p>然后系统会询问你3/4个问题（比如是否设置SSH KEY的密码，想不想设置随自己，不想就回车），都回车就行</p><p>然后一切顺利的话，系统会告诉你ssh key创建成功，已经生成了.ssh的文件夹。你去找到这个文件夹。</p><p>关于SSH KEY，有兴趣的可以看官方说明</p><p><a href="https://link.zhihu.com/?target=https%3A//git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5">Git - 生成 SSH 公钥git-scm.com</a></p><p>在.ssh文件下找到.pub文件</p><p><img src="https://pic3.zhimg.com/80/v2-d6ef434b33049e5a2b84e148f9e14d81_720w.jpg" alt="img"></p><p>图中为第二个</p><p>用记事本打开后复制全部，然后到你的github主页上，找到settings</p><p><img src="https://picb.zhimg.com/80/v2-1635121231da9e70ad048acea878c13f_720w.jpg" alt="img"></p><p><img src="https://pic4.zhimg.com/80/v2-951ded5d3cda7236bb28b67c2798405b_720w.jpg" alt="img"></p><p>然后NEW一个SSH KEY。名字依然是遵循好记好用原则，没有强制性要求。</p><p>把公钥（.pub的内容)复制进去</p><p>在命令行窗口中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>检查是否成功</p><p>3<strong><em>.最后一步，将hexo部署到github\</em></strong></p><p>没错，不知不觉，就要大功告成了。</p><p>打开blog文件</p><p>找到_config.yml文件</p><p><img src="https://pic3.zhimg.com/80/v2-9075c71bdc5bad4a11e3ee6ac350613c_720w.jpg" alt="img"></p><p>找到在最后的deploy</p><p><img src="https://pic2.zhimg.com/80/v2-28114145d7f1084d6ed86663e60cdd03_720w.jpg" alt="img"></p><p>改成自己的github用户名格式，如图</p><p>然后保存</p><p>回到命令行窗口</p><p>输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>然后</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>三行分别是用来：</p><p>hexo c 清除缓存</p><p>hexo g更新文件</p><p>hexo d 部署</p><p>（没错，简写也行）</p><p>deploy的时候可能要你输入github的用户名和密码，照做就行</p><p>到此为止，大功告成。</p><p>登录</p><p>http://你的github用户名.<a href="https://link.zhihu.com/?target=http%3A//github.io">http://github.io</a></p><p>就可以（让大家都可以）看你的博客啦！（或许会有一些时间，因为靠的是github的服务器）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 材料 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>stach局部变量辨析</title>
       <link href="/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/"/>
       <url>/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="普通局部变量与static局部变量的区别"><a href="#普通局部变量与static局部变量的区别" class="headerlink" title="普通局部变量与static局部变量的区别"></a>普通局部变量与static局部变量的区别</h2><h3 id="内存分配和释放"><a href="#内存分配和释放" class="headerlink" title="内存分配和释放"></a>内存分配和释放</h3><h4 id="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"><a href="#1、普通局部变量只有执行到变量定义的语句的时候才分配空间。" class="headerlink" title="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"></a>1、普通局部变量只有执行到变量定义的语句的时候才分配空间。</h4><h4 id="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"><a href="#2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。" class="headerlink" title="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"></a>2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。</h4><h4 id="3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。"><a href="#3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。" class="headerlink" title="3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。"></a>3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。</h4><h4 id="4、static局部变量只有在整个程序结束的时候才将其自动释放。"><a href="#4、static局部变量只有在整个程序结束的时候才将其自动释放。" class="headerlink" title="4、static局部变量只有在整个程序结束的时候才将其自动释放。"></a>4、static局部变量只有在整个程序结束的时候才将其自动释放。</h4><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h4 id="1、普通局部变量不初始化，为随机值。"><a href="#1、普通局部变量不初始化，为随机值。" class="headerlink" title="1、普通局部变量不初始化，为随机值。"></a>1、普通局部变量不初始化，为随机值。</h4><h4 id="2、static局部变量不初始化，为0。"><a href="#2、static局部变量不初始化，为0。" class="headerlink" title="2、static局部变量不初始化，为0。"></a>2、static局部变量不初始化，为0。</h4><h4 id="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"><a href="#3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。" class="headerlink" title="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"></a>3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。</h4><h4 id="4、static局部变量只能用它常量初始化。"><a href="#4、static局部变量只能用它常量初始化。" class="headerlink" title="4、static局部变量只能用它常量初始化。"></a>4、static局部变量只能用它常量初始化。</h4><p><strong>成员变量和局部变量的区别<br>   (1)在类中的位置不同<br>     成员变量：类中方法外<br>     局部变量：方法定义中或者方法声明上<br>   (2)在内存中的位置不同<br>     成员变量：在堆中<br>     局部变量：在栈中<br>   (3)生命周期不同<br>     成员变量：随着对象的创建而存在，随着对象的消失而消失<br>     局部变量：随着方法的调用而存在，随着方法的调用完毕而消失<br>   (4)初始化值不同<br>     成员变量：有默认值<br>     局部变量：没有默认值，必须定义，赋值，然后才能使用</strong></p>]]></content>
       
       
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
       
     </entry>
     
@@ -24,6 +61,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
       
     </entry>
     
@@ -37,6 +86,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
       
     </entry>
     
