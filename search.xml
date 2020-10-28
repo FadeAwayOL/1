@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>头文件？JAVA-import</title>
+      <link href="/2020/10/28/%E5%A4%B4%E6%96%87%E4%BB%B6%EF%BC%9FJAVA-Bye-import/"/>
+      <url>/2020/10/28/%E5%A4%B4%E6%96%87%E4%BB%B6%EF%BC%9FJAVA-Bye-import/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><p><strong>C/C++</strong> 之所以需要头文件（.h），有两个用处</p><p>​                    一.在开发编译的时候，在各个编译单元（Compile Unit）之间共享同样的定义；</p><p>​                    二.在发布程序库的时候，让使用者知道调用接口。</p><p>而 Java 程序的目标代码（就是最终发行的可执行程序），其实是中间代码（即 bytecode），它具有很强的自说明性。比如，你拿到一个 .class 文件，就能够知道它里面的类名、包含的属性、方法等，也就是说，所有的调用接口都是已知的（当然，也许你还需要一个文档——开发手册）。一个 .class 本身兼具了“目标代码”和“接口定义”的双重功能，所以不再需要一个单独的头文件。</p><p><strong>java</strong>中采用import的方式导入.class文件，.class文件中包含类的方法、属性等的定义，因此不在需要.h头文件</p><p>而c或c++编译后的二进制代码不包含函数和类的信息，为了在编译时进行函数格式合法性检查，采用.h的文件给出。</p><p>java提供给用户的是.class文件，虽然包含类的完整信息，但是对于开发者“不可读”，因此还需要以文档的方式提供类的声明。</p><h1 id="import"><a href="#import" class="headerlink" title="import"></a>import</h1><p>如果你希望使用Java包中的类，就必须先使用import语句导入。</p><p>import语句与C语言中的 #include 有些类似，语法为：<br>  import package1[.package2…].classname;<br>package 为包名，classname 为类名。例如：</p><p>\1. import java.util.Date; // 导入 java.util 包下的 Date 类</p><p>\2. import java.util.Scanner; // 导入 java.util 包下的 Scanner 类</p><p>\3. import javax.swing.<em>; // 导入 javax.swing 包下的所有类，</em> 表示所有类</p><p>注意：</p><p>· import 只能导入包所包含的类，而不能导入包。</p><p>· 为方便起见，我们一般不导入单独的类，而是导入包下所有的类，例如 import java.util.*;。</p><p>Java 编译器默认为所有的 Java 程序导入了 JDK 的 java.lang 包中所有的类（import java.lang.*;），其中定义了一些常用类，如 System、String、Object、Math 等，因此我们可以直接使用这些类而不必显式导入。但是使用其他类必须先导入。</p><p>前面讲到的”Hello World“程序使用了System.out.println(); 语句，System 类位于 java.lang 包，虽然我们没有显式导入这个包中的类，但是Java 编译器默认已经为我们导入了，否则程序会执行失败。</p><h2 id="Java类的搜索路径"><a href="#Java类的搜索路径" class="headerlink" title="\Java类的搜索路径**"></a><strong><em>\</em>Java类的搜索路径**</strong></h2><p>Java程序运行时要导入相应的类，也就是加载 .class 文件的过程。</p><p>假设有如下的 import 语句：</p><ol><li>import p1.Test;</li></ol><p>该语句表明要导入 p1 包中的 Test 类。</p><p>安装JDK时，我们已经设置了环境变量 CLASSPATH 来指明类库的路径，它的值为 .;%JAVA_HOME%\lib，而 JAVA_HOME 又为 D:\Program Files\jdk1.7.0_71，所以 CLASSPATH 等价于 .;D:\Program Files\jdk1.7.0_71\lib。</p><p>Java 运行环境将依次到下面的路径寻找并载入字节码文件 Test.class：</p><p>· .p1\Test.class（”.”表示当前路径）</p><p>· D:\Program Files\jdk1.7.0_71\lib\p1\Test.class</p><p>如果在第一个路径下找到了所需的类文件，则停止搜索，否则继续搜索后面的路径，如果在所有的路径下都未能找到所需的类文件，则编译或运行出错。</p><p>你可以在CLASSPATH变量中增加搜索路径，例如 .;%JAVA_HOME%\lib;C:\javalib，那么你就可以将类文件放在 C:\javalib 目录下，Java运行环境一样会找到。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构答辩</title>
       <link href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/"/>
       <url>/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/</url>
