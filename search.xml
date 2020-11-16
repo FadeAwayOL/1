@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java中的equals和hashCode方法详解</title>
+      <link href="/2020/11/16/Java%E4%B8%AD%E7%9A%84equals%E5%92%8ChashCode%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+      <url>/2020/11/16/Java%E4%B8%AD%E7%9A%84equals%E5%92%8ChashCode%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java中的equals和hashCode方法详解"><a href="#Java中的equals和hashCode方法详解" class="headerlink" title="Java中的equals和hashCode方法详解"></a>Java中的equals和hashCode方法详解</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java中Comparable和Comparator</title>
       <link href="/2020/11/13/Java%E4%B8%ADComparable%E5%92%8CComparator/"/>
       <url>/2020/11/13/Java%E4%B8%ADComparable%E5%92%8CComparator/</url>
@@ -163,7 +188,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 语法 </category>
           
       </categories>
       
