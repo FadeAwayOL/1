@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>PHP语法</title>
+      <link href="/2021/03/13/PHP%E8%AF%AD%E6%B3%95/"/>
+      <url>/2021/03/13/PHP%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h1><p><strong>1.PHP echo 和 print 语句</strong></p><p>echo 和 print 区别:</p><ul><li>echo - 可以输出一个或多个字符串</li><li>print - 只允许输出一个字符串，返回值总为 1</li></ul><p><strong>提示：</strong>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。</p><h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">   </span><br><span class="line">    $name =<span class="string">'小明'</span>;<span class="comment">//$定义变量</span></span><br><span class="line">    $score = <span class="number">78</span>;</span><br><span class="line">    <span class="keyword">if</span> (is_int($score) ||is_float($score)) &#123;<span class="comment">//判断成绩为数字</span></span><br><span class="line">    <span class="keyword">if</span>($score&gt;=<span class="number">90</span> &amp;&amp; $score&lt;=<span class="number">100</span>)&#123;</span><br><span class="line">      $str =<span class="string">'A级'</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>($score&gt;=<span class="number">80</span> &amp;&amp; $score&lt;<span class="number">90</span>) &#123;</span><br><span class="line">      $str=<span class="string">'B级'</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>($score&gt;=<span class="number">70</span> &amp;&amp; $score&lt;<span class="number">80</span>) &#123;</span><br><span class="line">      $str=<span class="string">'C级'</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>($score&gt;=<span class="number">60</span> &amp;&amp; $score&lt;<span class="number">70</span>) &#123;</span><br><span class="line">      $str=<span class="string">'D级'</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>($score&gt;=<span class="number">0</span> &amp;&amp; $score&lt;<span class="number">60</span>) &#123;</span><br><span class="line">      $str=<span class="string">'E级'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      $str =<span class="string">'学生成绩必须在0-100之间'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      $str =<span class="string">'输入学生的成绩不是数值'</span>;</span><br><span class="line">    &#125;<span class="comment">//根据不同情况定义不同需要输出的信息字符串</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;h2&gt;学生成绩等级&lt;/h2&gt;&lt;p&gt;学生姓名："</span>.$name.<span class="string">"&lt;p&gt;学生分数："</span>.$score.<span class="string">"分&lt;p&gt;成绩等级："</span>.$str;<span class="comment">//每个变量输出需要用符号隔开, .皆可</span></span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>To the Eventual &quot;FadeAway&quot;</title>
       <link href="/2021/03/02/To%20the%20Eventual%20FadeAway/"/>
       <url>/2021/03/02/To%20the%20Eventual%20FadeAway/</url>
