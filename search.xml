@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>回溯法</title>
+      <link href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
+      <url>/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h1><p>回溯（backtracking）法是一种选优搜索法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。</p><p>回溯法是一个既带有系统性又带有跳跃性的的搜索算法。它在包含问题的所有解的解空间树中，按照深度优先的策略，从根结点出发搜索解空间树。算法搜索至解空间树的任一结点时，总是先判断该结点是否肯定不包含问题的解。如果肯定不包含，则跳过对以该结点为根的子树的系统搜索，逐层向其祖先结点回溯。否则，进入该子树，继续按深度优先的策略进行搜索。回溯法在用来求问题的所有解时，要回溯到根，且根结点的所有子树都已被搜索遍才结束。而回溯法在用来求问题的任一解时，只要搜索到问题的一个解就可以结束。这种以深度优先的方式系统地搜索问题的解的算法称为回溯法，它适用于解一些组合数较大的问题.</p><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>写一个在1，2，…，9（顺序不能变）数字之间插入+或-或什么都不插入，使得计算结果总是100的程序，并输出所有的可能性。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例5.4算法</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 9</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> op[],<span class="keyword">int</span> sum,<span class="keyword">int</span> prevadd,<span class="keyword">int</span> a[],<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (i==N)<span class="comment">//扫描完所有位置</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (sum==<span class="number">100</span>)<span class="comment">//找到一个解</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"  %d"</span>,a[<span class="number">0</span>]);<span class="comment">//输出解</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;N;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (op[j]!=<span class="string">' '</span>)</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,op[j]);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,a[j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"=100\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">op[i]=<span class="string">'+'</span>;<span class="comment">//位置i插入'+'</span></span><br><span class="line">sum+=a[i];<span class="comment">//计算结果</span></span><br><span class="line">fun(op,sum,a[i],a,i+<span class="number">1</span>);<span class="comment">//继续处理下一个位置</span></span><br><span class="line">sum-=a[i];<span class="comment">//回溯</span></span><br><span class="line"></span><br><span class="line">op[i]=<span class="string">'-'</span>;<span class="comment">//位置i插入'-'</span></span><br><span class="line">sum-=a[i];<span class="comment">//计算结果</span></span><br><span class="line">fun(op,sum,-a[i],a,i+<span class="number">1</span>);<span class="comment">//继续处理下一个位置</span></span><br><span class="line">sum+=a[i];<span class="comment">//回溯</span></span><br><span class="line"></span><br><span class="line">op[i]=<span class="string">' '</span>;<span class="comment">//位置i插入' '</span></span><br><span class="line">sum-=prevadd;<span class="comment">//先减去前面的元素值</span></span><br><span class="line"><span class="keyword">int</span> tmp;<span class="comment">//计算新元素值</span></span><br><span class="line"><span class="keyword">if</span> (prevadd&gt;<span class="number">0</span>)</span><br><span class="line">tmp=prevadd*<span class="number">10</span>+a[i];<span class="comment">//如prevadd=5,a[i]=6,结果为56</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">tmp=prevadd*<span class="number">10</span>-a[i];<span class="comment">//如prevadd=-5,a[i]=6,结果为-56</span></span><br><span class="line">sum+=tmp;<span class="comment">//计算合并结果</span></span><br><span class="line">fun(op,sum,tmp,a,i+<span class="number">1</span>);<span class="comment">//继续处理下一个位置</span></span><br><span class="line">sum-=tmp;<span class="comment">//回溯sum</span></span><br><span class="line">sum+=prevadd;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">char</span> op[N];<span class="comment">//op[i]表示在位置i插入运算符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)<span class="comment">//为a赋值为1,2，...,9</span></span><br><span class="line">a[i]=i+<span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"求解结果\n"</span>);</span><br><span class="line">fun(op,a[<span class="number">0</span>],a[<span class="number">0</span>],a,<span class="number">1</span>);<span class="comment">//插入位置i从1开始</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>位示图计算</title>
       <link href="/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/"/>
       <url>/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/</url>
       
-        <content type="html"><![CDATA[<h1 id="位示图计算"><a href="#位示图计算" class="headerlink" title="位示图计算"></a>位示图计算</h1><p>1.题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。<br>磁盘容量为300GB，物理块大小4MB，则磁盘共300<em>1024/4=75</em>1024个物理块</p><p>​            位示图用每1位表示1个磁盘块的使用情况，1个字是32位，所以1个字可以表示32块物理块使用情况，那么需要75*1024/32＝2400个字</p><p>2.用字长为16位的200个字组成位示图来指示磁盘使用情况（字号、位号、磁盘块编号均从0开始），请计算：</p><p>（1）文件系统发现位示图的第15字、第10位为0而准备将一记录写入，问写入的是哪一块？</p><p>（2）若将第500块磁盘的数据删除，则应该讲位示图的哪个字哪一位改为0？</p><p>解：</p><p>​    （1）b=16(15-1)+（10-9）= 233   块号=字号*字长+位号</p><p>​    （2）i = INT[499/16] = 31     j = [499]MOD 16= 4</p><p>​            字号=[块号/字长] （截断）</p><p>​            位号=块号mod字长</p><p>​       由于字号、位号、磁盘块编号均从0开始，应该将</p><p>​       第 30行，第3列对应的字改为 0</p><p>3.<img src="https://iknow-pic.cdn.bcebos.com/b21bb051f8198618ce18cb9649ed2e738bd4e641" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="位示图计算"><a href="#位示图计算" class="headerlink" title="位示图计算"></a>位示图计算</h1><p>1.题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。<br>磁盘容量为300GB，物理块大小4MB，则磁盘共300<em>1024/4=75</em>1024个物理块</p><p>​            位示图用每1位表示1个磁盘块的使用情况，1个字是32位，所以1个字可以表示32块物理块使用情况，那么需要75*1024/32＝2400个字</p><p>2.用字长为16位的200个字组成位示图来指示磁盘使用情况（字号、位号、磁盘块编号均从0开始），请计算：</p><p>（1）文件系统发现位示图的第15字、第10位为0而准备将一记录写入，问写入的是哪一块？</p><p>（2）若将第500块磁盘的数据删除，则应该讲位示图的哪个字哪一位改为0？</p><p>解：</p><p>​    （1）b=16(15-1)+（10-9）= 233   块号=字号*字长+位号</p><p>​    （2）i = INT[499/16] = 31     j = [499]MOD 16= 4</p><p>​            字号=[块号/字长] （截断）</p><p>​            位号=块号mod字长</p><p>​       由于字号、位号、磁盘块编号均从0开始，应该将</p><p>​       第 30行，第3列对应的字改为 0</p><p>3.<img src="https://iknow-pic.cdn.bcebos.com/b21bb051f8198618ce18cb9649ed2e738bd4e641" alt=""></p><p>4.磁盘地址映射<br>柱面号、磁头号、扇区号<br>字号为m，位号为n，物理块号：m * 字长 + n<br>根据物理地址，求柱面号、磁头号、扇区号</p><p>柱面号 = 物理块号 / (磁头号 * 扇区号)</p><p>磁头号 = 物理块号 % (磁头号 * 扇区号) / 扇区号</p><p>扇区号 = 物理块号 % (磁头号 * 扇区号) % 扇区号</p><p>题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。</p><p>磁盘容量为300GB，物理块大小4MB，则磁盘共<code>300*1024/4=75*1024</code>个物理块，位示图用每1位表示1个磁盘块的使用情况，1个字是32位，所以1个字可以表示32块物理块使用情况，那么需要75*1024/32＝2400个字</p><p>5.有一计算机系统利用位示图来管理磁盘文件空间。假定该磁盘组共有100个柱面，每个柱面有20个磁道，每个磁道分成8个盘块（扇区），每个盘块1KB，位示图如下图所示。1）试给出位示图中的位置(i, j)与对应盘块所在的物理位置（柱面号、磁头号、扇区号）之间的计算公式。假定柱面号、磁头号、扇区号都从0开始编号。2）试说明分配和回收一个盘块的过程。</p><p><img src="https://iknow-pic.cdn.bcebos.com/f2deb48f8c5494eea8160e1225f5e0fe99257e80" alt=""></p><pre><code>(1)根据位示图的位置（i,j），得出盘块的序号b=i*16+j;用C 表示柱面号，H 表示磁头号，S</code></pre><p>表示扇区号，则有：<br>C=b/(20<em>8)<br>H=(b%(20</em>8))/8<br>S=(b%(20<em>8))%8<br>(2)分配：顺序扫描位示图，找出1 个其值为“0”的二进制位，利用上述公式将其转换成相应的序号b，并修改位示图，置（i,j）=1;<br>回收：将回收盘块的盘块号换算成位示图中的i 和j，转换公式为：<br>b=C</em>20<em>8+H</em>8+S<br>i=b/16,j=b%16<br>最后将计算出的（i,j）在位示图中置“0”</p>]]></content>
       
       
       <categories>
@@ -86,6 +111,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实践 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -99,6 +136,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
       
     </entry>
     
