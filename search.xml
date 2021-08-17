@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>DFS迷宫</title>
+      <link href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/"/>
+      <url>/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="DFS迷宫"><a href="#DFS迷宫" class="headerlink" title="DFS迷宫"></a>DFS迷宫</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实践 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回溯法</title>
       <link href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
       <url>/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/</url>
@@ -121,31 +146,6 @@
         <tags>
             
             <tag> c/c++ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DFS迷宫</title>
-      <link href="/2021/05/28/DFS%E8%BF%B7%E5%AE%AB/"/>
-      <url>/2021/05/28/DFS%E8%BF%B7%E5%AE%AB/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 实践 </tag>
             
         </tags>
       
