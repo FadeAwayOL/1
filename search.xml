@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>四则运算</title>
+      <link href="/2021/09/05/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <url>/2021/09/05/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题解决过程"><a href="#问题解决过程" class="headerlink" title="问题解决过程"></a>问题解决过程</h1><p>1.IntelliJ IDEA如何将普通java项目变为web项目？</p><p>  右键选中项目-&gt;project structure-&gt;Facets，然后点击绿色的“+”号，点击web…</p><p>2.获取java随机产生的题目</p><pre><code>java： Random.nextInt(int n)方法</code></pre><p>该方法的作用是生成一个随机的int值，该值介于[0,n)的区间，也就是0到n之间的随机int值，包含0而不包含n。</p><p>3.servelet</p><p><img src="C:%5CUsers%5CDELL%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210905170052900.png" alt="image-20210905170052900"></p><p>​     response对象和request对象</p><p>​    doGet和doPost</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javaweb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Operation</title>
       <link href="/2021/09/02/Operation/"/>
       <url>/2021/09/02/Operation/</url>
